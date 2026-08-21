@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Menu } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Menu, X } from "lucide-react";
 
 import heroDancer from "@/assets/hero-dancer.jpg";
 import founder from "@/assets/founder.jpg";
