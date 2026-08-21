@@ -238,7 +238,7 @@ function Index() {
         </section>
 
         {/* CURRICULUM */}
-        <section className="mx-auto max-w-6xl px-gutter py-section md:py-section-lg">
+        <section id="curriculum" className="mx-auto max-w-6xl px-gutter py-section md:py-section-lg">
           <span className="label-caps text-muted-foreground">The Academy</span>
           <h2 className="display-serif mt-2 text-[32px] text-primary md:text-[48px]">Curriculum</h2>
           <div className="mt-10 flex flex-col">
@@ -259,7 +259,7 @@ function Index() {
         </section>
 
         {/* GALLERY */}
-        <section className="w-full border-t border-border bg-card py-section md:py-section-lg">
+        <section id="gallery" className="w-full border-t border-border bg-card py-section md:py-section-lg">
           <div className="mx-auto max-w-6xl px-gutter">
             <div className="flex items-end justify-between">
               <h2 className="display-serif text-[32px] text-primary md:text-[48px]">In Motion</h2>
