@@ -13,40 +13,43 @@ function Index() {
   return (
     <main className="pt-16">
       {/* HERO SECTION */}
-      <section className="relative flex min-h-[660px] w-full flex-col justify-end px-gutter pb-16 md:h-[90vh]">
+      <section className="relative flex min-h-[620px] w-full flex-col justify-end px-gutter pb-12 pt-28 md:min-h-[85vh] md:pb-20 lg:justify-center overflow-hidden bg-charcoal">
         <img
           src={heroDancer}
-          alt="Manipuri dancer mid-twirl in traditional Potloi costume"
+          alt="Classical dancer performing mudra pose in white and gold saree"
           width={1024}
           height={1536}
-          className="absolute inset-0 h-full w-full object-cover object-top brightness-90"
+          className="absolute inset-0 h-full w-full object-cover object-[center_35%] lg:object-[75%_28%] brightness-90 transition-all duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-charcoal/20" />
+        {/* Mobile gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/20 lg:hidden" />
+        {/* Desktop left-to-right gradient overlay */}
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/85 to-transparent w-2/3" />
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-charcoal/40" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6">
-          <div className="flex flex-col gap-3">
-            <h1 className="display-serif max-w-[10ch] text-[44px] text-ivory sm:text-[64px] md:text-[84px] leading-none font-normal">
+          <div className="flex flex-col gap-4 max-w-2xl">
+            <p className="label-caps text-rose-gold tracking-[0.2em] text-xs sm:text-sm font-semibold uppercase">
+              {brand.disciplines.join("  ·  ")}
+            </p>
+            <h1 className="display-serif text-[42px] text-ivory sm:text-[64px] lg:text-[76px] leading-[1.05] font-normal">
               {brand.tagline}
             </h1>
-            <p className="label-caps text-rose-gold tracking-widest text-xs sm:text-sm font-semibold uppercase">
-              {brand.disciplines.join("  ·  ")}
+            <p className="text-ivory/90 text-base sm:text-lg leading-relaxed max-w-lg mt-1">
+              {brand.subheading}
             </p>
           </div>
 
-          <p className="max-w-[42ch] text-ivory/90 text-base sm:text-lg leading-relaxed">
-            {brand.subheading}
-          </p>
-
-          <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               to="/forms"
-              className="btn-label rounded-sm bg-primary px-8 py-4 text-center text-primary-foreground transition-opacity hover:opacity-90 shadow-lg text-sm font-semibold uppercase tracking-wider"
+              className="btn-label rounded-sm bg-primary px-8 py-4 text-center text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-xl text-sm font-semibold uppercase tracking-wider"
             >
               Explore Dance Forms
             </Link>
             <Link
               to="/about"
-              className="btn-label rounded-sm border border-ivory/70 backdrop-blur-sm px-8 py-4 text-center text-ivory transition-colors hover:bg-ivory hover:text-charcoal text-sm font-semibold uppercase tracking-wider"
+              className="btn-label rounded-sm border border-rose-gold/60 backdrop-blur-md px-8 py-4 text-center text-ivory transition-colors hover:bg-rose-gold hover:text-charcoal text-sm font-semibold uppercase tracking-wider"
             >
               Meet Muktashree
             </Link>
