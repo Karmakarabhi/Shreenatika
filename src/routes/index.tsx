@@ -58,7 +58,16 @@ const timeline = [
   { year: "2022", text: "Expanded to a full-time academy, integrating multiple classical disciplines." },
 ];
 
+const navLinks = [
+  { label: "The Artist", href: "#artist" },
+  { label: "Forms", href: "#forms" },
+  { label: "Curriculum", href: "#curriculum" },
+  { label: "Gallery", href: "#gallery" },
+];
+
 function Index() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="fixed top-0 z-50 w-full border-b border-border bg-background/85 backdrop-blur-xl">
@@ -67,20 +76,39 @@ function Index() {
             Shreenatika
           </span>
           <nav className="hidden items-center gap-8 md:flex">
-            {["The Artist", "Forms", "Curriculum", "Gallery"].map((item) => (
+            {navLinks.map((item) => (
               <a
-                key={item}
-                href="#"
+                key={item.label}
+                href={item.href}
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </nav>
-          <button aria-label="Open menu" className="p-2 md:hidden">
-            <Menu className="h-5 w-5" />
+          <button
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+            className="p-2 md:hidden"
+          >
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
+        {menuOpen && (
+          <nav className="flex flex-col border-t border-border bg-background px-gutter py-4 md:hidden">
+            {navLinks.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="label-caps border-b border-border/60 py-4 text-foreground last:border-0"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        )}
       </header>
 
       <main className="pt-16">
