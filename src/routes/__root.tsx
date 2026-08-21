@@ -92,7 +92,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Classical dance, reimagined through contemporary artistic expression.",
       },
       { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content: "/api/og?title=Shreenatika&subtitle=The+language+of+movement",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Shreenatika — Indian Classical Dance Academy" },
+      {
+        name: "twitter:description",
+        content: "Classical dance, reimagined through contemporary artistic expression.",
+      },
+      {
+        name: "twitter:image",
+        content: "/api/og?title=Shreenatika&subtitle=The+language+of+movement",
+      },
     ],
     links: [
       {

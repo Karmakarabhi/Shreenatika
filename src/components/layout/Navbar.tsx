@@ -1,16 +1,15 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { ArrowUpRight } from "lucide-react";
-import shreenatikaWordmark from "@/assets/shreenatika-wordmark.svg";
+import shreenatikaVector from "@/assets/ShreenatikaVector.svg";
 import { MenuToggle } from "@/components/ui/menu-toggle";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "The Artist", href: "/about" },
-  { label: "Forms", href: "/forms" },
-  { label: "Academy", href: "/classes" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
+  { number: "01", label: "Home", href: "/" },
+  { number: "02", label: "The Artist", href: "/about" },
+  { number: "03", label: "The Forms", href: "/forms" },
+  { number: "04", label: "Learn", href: "/classes" },
+  { number: "05", label: "Gallery", href: "/gallery" },
+  { number: "06", label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -42,11 +41,11 @@ export function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-gutter">
         {/* Brand Logo & Title */}
         <Link to="/" className="group flex items-center gap-3">
-          <div className="relative h-10 w-auto min-w-[90px] color-pink-600 overflow-hidden rounded-sm  transition-all group-hover:border-rose-gold group-hover:shadow-md">
+          <div className="relative h-10 w-auto min-w-[122px] overflow-hidden rounded-sm transition-all group-hover:shadow-md">
             <img
-              src={shreenatikaWordmark}
+              src={shreenatikaVector}
               alt="Shreenatika Logo"
-              className="h-full w-full object-cover object-center"
+              className="h-full w-full object-contain"
             />
           </div>
           <div className="hidden flex-col sm:flex">
@@ -87,7 +86,7 @@ export function Navbar() {
         </nav>
 
         {/* Mobile Menu Toggle Button */}
-        <div className="flex items-center justify-center rounded-md border border-border/80 bg-background/80 p-2.5 text-foreground transition-colors hover:bg-muted md:hidden">
+        <div className="flex items-center justify-center p-2.5 text-foreground md:hidden">
           <MenuToggle
             open={menuOpen}
             onOpenChange={setMenuOpen}
@@ -98,8 +97,9 @@ export function Navbar() {
 
       {/* Mobile Navigation Drawer / Overlay */}
       {menuOpen && (
-        <div className="fixed inset-x-0 top-[60px] z-40 flex flex-col border-b border-border bg-background px-gutter py-6 shadow-2xl animate-in slide-in-from-top-2 duration-200 md:hidden">
-          <nav className="flex flex-col gap-1">
+        <div className="fixed inset-x-0 top-[60px] z-40 flex min-h-[calc(100vh-60px)] flex-col bg-background/95 backdrop-blur-md px-8 py-8 animate-in slide-in-from-top-2 duration-200 md:hidden">
+          {/* Navigation Items */}
+          <nav className="flex flex-col">
             {navItems.map((item) => {
               const isActive = location.pathname === item.href;
               return (
@@ -107,32 +107,43 @@ export function Navbar() {
                   key={item.label}
                   to={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`flex items-center justify-between border-b border-border/40 py-3.5 px-2 text-base font-serif transition-colors ${
-                    isActive
-                      ? "text-primary font-semibold bg-primary/5 rounded-sm"
-                      : "text-foreground hover:text-primary"
-                  }`}
+                  className="group border-b border-border/40 py-5"
                 >
-                  <span>{item.label}</span>
-                  <ArrowUpRight
-                    className={`h-4 w-4 ${isActive ? "text-primary" : "text-muted-foreground/50"}`}
-                  />
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-serif text-[14px] text-muted-foreground/50 transition-colors group-hover:text-primary/70">
+                      {item.number}
+                    </span>
+                    <span
+                      className={`font-serif text-[28px] leading-tight transition-colors ${
+                        isActive ? "text-primary" : "text-foreground group-hover:text-primary"
+                      }`}
+                    >
+                      {item.label}
+                    </span>
+                  </div>
                 </Link>
               );
             })}
           </nav>
-          <div className="mt-6 pt-4 border-t border-border/60 flex flex-col gap-3">
-            <Link
-              to="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="btn-label w-full rounded-sm bg-primary py-3 text-center text-sm font-semibold uppercase tracking-wider text-primary-foreground shadow"
-            >
-              Enquire About Classes
-            </Link>
-            <p className="text-center text-xs text-muted-foreground pt-2">
+
+          {/* Brand Statement */}
+          <div className="mt-auto pt-12 pb-8">
+            <p className="font-serif text-[26px] italic leading-snug text-foreground/80">
+              The language of movement.
+            </p>
+            <p className="mt-4 label-caps text-[11px] text-muted-foreground">
               Manipuri · Bharatanatyam · Rabindra Nritya
             </p>
           </div>
+
+          {/* CTA Button */}
+          <Link
+            to="/contact"
+            onClick={() => setMenuOpen(false)}
+            className="w-full rounded-sm border border-primary bg-primary py-4 text-center text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Enquire About Classes
+          </Link>
         </div>
       )}
     </header>

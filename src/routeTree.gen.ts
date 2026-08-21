@@ -15,6 +15,7 @@ import { Route as ClassesRouteImport } from './routes/classes'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FormsRouteImport } from './routes/forms'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ApiOgRouteImport } from './routes/api/og'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiOgRoute = ApiOgRouteImport.update({
+  id: '/api/og',
+  path: '/api/og',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/forms': typeof FormsRoute
   '/gallery': typeof GalleryRoute
+  '/api/og': typeof ApiOgRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/forms': typeof FormsRoute
   '/gallery': typeof GalleryRoute
+  '/api/og': typeof ApiOgRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,12 +79,15 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/forms': typeof FormsRoute
   '/gallery': typeof GalleryRoute
+  '/api/og': typeof ApiOgRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/classes' | '/contact' | '/forms' | '/gallery'
+  fullPaths:
+    '/' | '/about' | '/classes' | '/contact' | '/forms' | '/gallery' | '/api/og'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/classes' | '/contact' | '/forms' | '/gallery'
+  to:
+    '/' | '/about' | '/classes' | '/contact' | '/forms' | '/gallery' | '/api/og'
   id:
     | '__root__'
     | '/'
@@ -85,6 +96,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/forms'
     | '/gallery'
+    | '/api/og'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,6 +106,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FormsRoute: typeof FormsRoute
   GalleryRoute: typeof GalleryRoute
+  ApiOgRoute: typeof ApiOgRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -140,6 +153,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/og': {
+      id: '/api/og'
+      path: '/api/og'
+      fullPath: '/api/og'
+      preLoaderRoute: typeof ApiOgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -150,6 +170,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FormsRoute: FormsRoute,
   GalleryRoute: GalleryRoute,
+  ApiOgRoute: ApiOgRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -251,19 +251,19 @@ export const academyData = {
 
   timeline: [
     {
-      year: "2008",
+      year: "2017",
       text: "Began formal classical dance training under renowned Gurus in Silchar.",
     },
     {
-      year: "2014",
+      year: "2018",
       text: "First solo classical performance, marking the transition from student to performing artist.",
     },
     {
-      year: "2018",
+      year: "2023",
       text: "Founded Shreenatika as an artistic series dedicated to preserving traditional Indian dance forms.",
     },
     {
-      year: "2022",
+      year: "2024",
       text: "Expanded into a full academy, synthesizing Manipuri, Bharatanatyam, and Rabindra Nritya.",
     },
     {
