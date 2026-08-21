@@ -1,7 +1,8 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
-import logoImg from "@/assets/logo.png";
+import { ArrowUpRight } from "lucide-react";
+import shreenatikaWordmark from "@/assets/shreenatika-wordmark.svg";
+import { MenuToggle } from "@/components/ui/menu-toggle";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -41,9 +42,9 @@ export function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-gutter">
         {/* Brand Logo & Title */}
         <Link to="/" className="group flex items-center gap-3">
-          <div className="relative h-10 w-auto min-w-[90px] overflow-hidden rounded-sm border border-rose-gold/40 shadow-sm transition-all group-hover:border-rose-gold group-hover:shadow-md">
+          <div className="relative h-10 w-auto min-w-[90px] color-pink-600 overflow-hidden rounded-sm  transition-all group-hover:border-rose-gold group-hover:shadow-md">
             <img
-              src={logoImg}
+              src={shreenatikaWordmark}
               alt="Shreenatika Logo"
               className="h-full w-full object-cover object-center"
             />
@@ -86,14 +87,13 @@ export function Navbar() {
         </nav>
 
         {/* Mobile Menu Toggle Button */}
-        <button
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((o) => !o)}
-          className="flex items-center justify-center rounded-md border border-border/80 bg-background/80 p-2 text-foreground transition-colors hover:bg-muted md:hidden"
-        >
-          {menuOpen ? <X className="h-6 w-6 text-primary" /> : <Menu className="h-6 w-6 text-foreground" />}
-        </button>
+        <div className="flex items-center justify-center rounded-md border border-border/80 bg-background/80 p-2.5 text-foreground transition-colors hover:bg-muted md:hidden">
+          <MenuToggle
+            open={menuOpen}
+            onOpenChange={setMenuOpen}
+            className="size-6 text-foreground"
+          />
+        </div>
       </div>
 
       {/* Mobile Navigation Drawer / Overlay */}

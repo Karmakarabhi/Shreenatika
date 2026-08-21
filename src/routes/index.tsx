@@ -123,9 +123,9 @@ function Index() {
                       {form.name}
                     </h3>
                   </div>
-                  <span className="label-caps text-xs text-rose-gold font-semibold uppercase tracking-wider">
+                  {/* <span className="label-caps text-xs text-rose-gold font-semibold uppercase tracking-wider">
                     {form.tagline}
-                  </span>
+                  </span> */}
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-12 items-center">
@@ -307,7 +307,7 @@ function Index() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* TESTIMONIALS - COMMENTED OUT
       <section className="w-full bg-secondary/40 border-y border-border py-20 px-gutter">
         <div className="mx-auto max-w-5xl text-center">
           <span className="label-caps text-muted-foreground uppercase tracking-widest">
@@ -323,7 +323,7 @@ function Index() {
                 className="flex flex-col justify-between rounded-sm border border-border bg-card p-6 text-left shadow-sm"
               >
                 <p className="font-serif italic text-base text-foreground/90 leading-relaxed">
-                  “{item.quote}”
+                  "{item.quote}"
                 </p>
                 <div className="mt-6 pt-4 border-t border-border/60">
                   <p className="text-xs font-semibold text-primary uppercase tracking-wider">
@@ -336,6 +336,7 @@ function Index() {
           </div>
         </div>
       </section>
+      */}
 
       {/* FINAL CTA */}
       <section className="flex w-full flex-col items-center gap-6 bg-primary px-gutter py-24 text-center text-primary-foreground">

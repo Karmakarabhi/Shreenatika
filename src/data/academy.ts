@@ -68,7 +68,7 @@ export const academyData = {
       "Dance is not only a form of movement. It is a way of remembering, feeling, and telling a story.",
     bio: [
       "Muktashree Sinha is a professionally trained classical dancer, choreographer, and educator whose artistic journey spans Manipuri, Bharatanatyam, and Rabindra Nritya.",
-      "Trained under celebrated Gurus in Kolkata and traditional dance hubs, Muktashree brings a nuanced aesthetic balance to her teaching—respecting ancient movement geometry while making classical forms resonant for contemporary learners.",
+      "Trained under celebrated Gurus in Silchar and traditional dance hubs, Muktashree brings a nuanced aesthetic balance to her teaching—respecting ancient movement geometry while making classical forms resonant for contemporary learners.",
       "Through Shreenatika, she nurtures students not just in physical technique, but in body awareness, musicality, emotional expression (Abhinaya), and artistic confidence.",
     ],
     img: founder,
@@ -252,7 +252,7 @@ export const academyData = {
   timeline: [
     {
       year: "2008",
-      text: "Began formal classical dance training under renowned Gurus in Kolkata.",
+      text: "Began formal classical dance training under renowned Gurus in Silchar.",
     },
     {
       year: "2014",
@@ -345,11 +345,11 @@ export const academyData = {
   ],
 
   contact: {
-    email: "enquiry@shreenatika.org",
+    email: "business@shreenatika@gmail.com",
     phone: "+91 98300 00000",
     whatsapp: "+91 98300 00000",
-    location: "Kolkata, West Bengal, India",
-    address: "Shreenatika Arts Academy, Salt Lake / Southern Avenue Studios, Kolkata",
+    location: "Silchar, Assam, India",
+    address: "Shreenatika Arts Academy, Silchar, Assam",
     hours: "Tuesday - Sunday: 9:00 AM - 7:30 PM",
     socials: {
       instagram: "https://instagram.com/shreenatika_dance",

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logoImg from "@/assets/logo.png";
+import shreenatikaWordmark from "@/assets/shreenatika-wordmark.svg";
 import { academyData } from "@/data/academy";
 
 export function Footer() {
@@ -10,30 +10,30 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-12 md:gap-8">
           {/* Brand Info & Logo */}
           <div className="flex flex-col gap-4 md:col-span-5">
-            <Link to="/" className="flex items-center gap-4 group w-fit">
-              <div className="h-14 w-auto min-w-[120px] overflow-hidden rounded border border-rose-gold/40 shadow-md transition-transform group-hover:scale-105">
+            <Link to="/" className="items-center gap-4 group w-fit">
+              <div className="h-22 w-auto min-w-[120px] overflow-hidden rounded transition-transform group-hover:scale-105">
                 <img
-                  src={logoImg}
+                  src={shreenatikaWordmark}
                   alt="Shreenatika Logo"
                   className="h-full w-full object-cover object-center"
                 />
               </div>
+              <span className="text-xs tracking-widest text-ivory/60 uppercase">
+                Indian Classical Dance Academy
+              </span>
               <div className="flex flex-col">
-                <span className="font-serif text-2xl font-normal uppercase tracking-[0.25em] text-rose-gold">
+                {/* <span className="font-serif text-2xl font-normal uppercase tracking-[0.25em] text-rose-gold">
                   Shreenatika
-                </span>
-                <span className="text-xs tracking-widest text-ivory/60 uppercase">
-                  Indian Classical Dance Academy
-                </span>
+                </span> */}
               </div>
             </Link>
             <p className="mt-2 max-w-sm text-sm text-ivory/70 leading-relaxed">
               {academyData.brand.positioning}
             </p>
-            <div className="mt-2 flex items-center gap-2 text-xs text-rose-gold/80">
+            {/* <div className="mt-2 flex items-center gap-2 text-xs text-rose-gold/80">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-gold" />
               <span>{academyData.brand.principle}</span>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -168,8 +168,9 @@ export function Footer() {
             © {new Date().getFullYear()} Shreenatika Dance Academy. All rights reserved.
           </p>
           <p className="text-xs text-ivory/60">
-            Artistic Leadership by{" "}
-            <span className="text-rose-gold">{academyData.brand.founderName}</span>
+            {/* Artistic Leadership by{" "}
+            <span className="text-rose-gold">{academyData.brand.founderName}</span> */}
+            Made with lots of ❤️ By Neel
           </p>
         </div>
       </div>
