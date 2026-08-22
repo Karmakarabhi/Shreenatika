@@ -48,7 +48,7 @@ export function Navbar() {
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="hidden flex-col sm:flex">
+          <div className="hidden">
             <span className="font-serif text-lg font-medium uppercase tracking-[0.25em] text-primary transition-colors group-hover:text-primary/80">
               Shreenatika
             </span>
