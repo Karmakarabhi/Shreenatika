@@ -37,12 +37,12 @@ function DanceFormsPage() {
               className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-center scroll-mt-24"
             >
               {/* Form Visual Image */}
-              <div className={`lg:col-span-6 ${form.offset ? "lg:order-2" : "lg:order-1"}`}>
+              <div className={`lg:col-span-5 ${form.offset ? "lg:order-2" : "lg:order-1"}`}>
                 <div className="relative overflow-hidden rounded-sm border border-rose-gold/30 shadow-xl group">
                   <img
                     src={form.img}
                     alt={form.alt}
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="aspect-[3/4] max-h-[520px] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4 bg-charcoal/80 text-rose-gold px-4 py-1 font-serif text-xl border border-rose-gold/30 backdrop-blur-md rounded-sm">
                     {form.n}
@@ -55,7 +55,7 @@ function DanceFormsPage() {
 
               {/* Form Content & Details */}
               <div
-                className={`lg:col-span-6 ${form.offset ? "lg:order-1" : "lg:order-2"} flex flex-col gap-6`}
+                className={`lg:col-span-7 ${form.offset ? "lg:order-1" : "lg:order-2"} flex flex-col gap-6`}
               >
                 <div>
                   <span className="label-caps text-rose-gold font-semibold uppercase tracking-widest">

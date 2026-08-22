@@ -66,7 +66,7 @@ function GalleryPage() {
                 <img
                   src={item.img}
                   alt={item.alt}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-charcoal/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">

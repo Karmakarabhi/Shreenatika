@@ -131,20 +131,20 @@ function Index() {
                   </span> */}
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-12 items-center">
-                  <div className="md:col-span-7">
-                    <div className="overflow-hidden rounded-sm border border-border shadow-md">
+                <div className="grid gap-8 md:grid-cols-12 items-center">
+                  <div className={`md:col-span-5 ${i % 2 === 1 ? "md:order-2" : "md:order-1"}`}>
+                    <div className="overflow-hidden rounded-sm border border-rose-gold/30 shadow-lg">
                       <img
                         src={form.img}
                         alt={form.alt}
-                        width={1024}
-                        height={768}
+                        width={800}
+                        height={1000}
                         loading="lazy"
-                        className="h-64 w-full object-cover transition-transform duration-500 hover:scale-105 md:h-[380px]"
+                        className="aspect-[3/4] max-h-[480px] w-full object-cover object-top transition-transform duration-700 hover:scale-105"
                       />
                     </div>
                   </div>
-                  <div className="md:col-span-5 flex flex-col gap-4">
+                  <div className={`md:col-span-7 ${i % 2 === 1 ? "md:order-1" : "md:order-2"} flex flex-col gap-4`}>
                     <p className="font-serif text-[24px] italic text-primary md:text-[28px]">
                       “{form.line}”
                     </p>
